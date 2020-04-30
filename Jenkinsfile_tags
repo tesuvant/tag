@@ -1,5 +1,5 @@
 node("master"){
 
-  sh "env | sort && echo $TAG_NAME"
+  sh "env | sort && echo \$TAG_NAME"
 
 }
