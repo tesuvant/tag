@@ -1,3 +1,10 @@
+def getJobName() {
+  def jobNameParts = env.JOB_NAME.tokenize('/') as String[]
+  return jobNameParts.length < 2 ? env.JOB_NAME : jobNameParts[jobNameParts.length - 2]
+}
+
+echo getJobName()
+
 node("master"){
 
   sh "env | sort && echo \$TAG_NAME"
